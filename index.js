@@ -56,12 +56,11 @@ const circularArray = (arr, int) => {
   while (i < arr.length * int) {
     const inx = i % arr.length
     console.log(arr[inx])
-    if (arr[inx] === arr.length) {
-      console.log('----------')
+    if (inx === arr.length - 1) {
+      console.log('==========')
     }
-
     i++
   }
 }
 
-const output = circularArray([1, 2, 3], 3)
+const output = circularArray(['one', 'two', 'three'], 3)
