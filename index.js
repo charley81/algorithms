@@ -22,13 +22,12 @@ function printAllPossibleOrderedPairs(arrayOfItems) {
   })
 }
 
-
 // Example where N could be the actual input, or the size of the input
 // Both function have O(n) runtime, even though one takes an integer as its input and the other takes an array.
 // Sometimes n is an acutal number that's an input to the function, and other times n is the number of items in an input array
 function sayHelloNTimes(n) {
   for (let i = 0; i < n; i++) {
-    console.log('hello');
+    console.log('hello')
   }
 }
 
@@ -41,7 +40,28 @@ function printAllItemsInArray(theArray) {
 // In this example I might have 100 items in the haystack, but the first item might be the needle, in which case I would return in just 1 iteration of the loop. I can say this is O(n) runtime and the worst case scenario would be implied. But to be more specific I could say that is worst case O(n) and best case O(1) runtime
 function contains(haystack, needle) {
   for (let i = 0; i < haystack.length; i++) {
-    if (haystack[i] === needle) return true;
+    if (haystack[i] === needle) return true
   }
-  return false;
+  return false
 }
+
+// Write a “circular array” with only a single loop (for, or while).
+// I.e. Create a function that takes 2 parameters: an array, and an integer
+// The integer is the number of times the array will be printed.
+// You must use the mod operator
+// Just console.log the output on each loop iteration
+const circularArray = (arr, int) => {
+  let i = 0
+
+  while (i < arr.length * int) {
+    const inx = i % arr.length
+    console.log(arr[inx])
+    if (arr[inx] === arr.length) {
+      console.log('----------')
+    }
+
+    i++
+  }
+}
+
+const output = circularArray([1, 2, 3], 3)
