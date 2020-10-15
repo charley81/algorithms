@@ -1,3 +1,5 @@
+// Notes taken from: https://medium.com/karuna-sehgal/a-simplified-explanation-of-the-big-o-notation-82523585e835
+
 // Big O
 
 // O(1) Constant Time
@@ -18,4 +20,28 @@ function printAllPossibleOrderedPairs(arrayOfItems) {
   arrayOfItems.forEach(firstItem => {
     arrayOfItems.forEach(secondItem => console.log(firstItem, secondItem))
   })
+}
+
+
+// Example where N could be the actual input, or the size of the input
+// Both function have O(n) runtime, even though one takes an integer as its input and the other takes an array.
+// Sometimes n is an acutal number that's an input to the function, and other times n is the number of items in an input array
+function sayHelloNTimes(n) {
+  for (let i = 0; i < n; i++) {
+    console.log('hello');
+  }
+}
+
+function printAllItemsInArray(theArray) {
+  theArray.forEach(item => console.log(item))
+}
+
+// Worst Case Scenario
+// When it comes to Big O Notation, we are usually talking about the worst case scenario. At times the worst case runtime is significantly worse than the best case runtime
+// In this example I might have 100 items in the haystack, but the first item might be the needle, in which case I would return in just 1 iteration of the loop. I can say this is O(n) runtime and the worst case scenario would be implied. But to be more specific I could say that is worst case O(n) and best case O(1) runtime
+function contains(haystack, needle) {
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i] === needle) return true;
+  }
+  return false;
 }
