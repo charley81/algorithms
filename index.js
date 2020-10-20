@@ -76,6 +76,7 @@ basicRecursion(5, 1)
 
 // Fibonacci
 function fibonacci(n) {
+  // BaseCase
   if (n <= 2) {
     return 1
   } else {
@@ -84,3 +85,10 @@ function fibonacci(n) {
 }
 
 fibonacci(5)
+
+// Factorial
+function factorial(n) {
+  // BaseCase
+  if (n < 2) return 1
+  return n * factorial(n - 1)
+}
