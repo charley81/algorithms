@@ -64,3 +64,23 @@ const circularArray = (arr, int) => {
 }
 
 const output = circularArray(['one', 'two', 'three'], 3)
+
+// RECURSION - When you define something in terms of itself / A function that calls itself
+function basicRecursion(max, current) {
+  if (current > max) return
+  console.log(current)
+  basicRecursion(max, current + 1)
+}
+
+basicRecursion(5, 1)
+
+// Fibonacci
+function fibonacci(n) {
+  if (n <= 2) {
+    return 1
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2)
+  }
+}
+
+fibonacci(5)
