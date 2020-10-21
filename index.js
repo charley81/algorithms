@@ -27,7 +27,7 @@ function printAllPossibleOrderedPairs(arrayOfItems) {
 // Sometimes n is an acutal number that's an input to the function, and other times n is the number of items in an input array
 function sayHelloNTimes(n) {
   for (let i = 0; i < n; i++) {
-    console.log('hello')
+    // console.log('hello')
   }
 }
 
@@ -55,9 +55,9 @@ const circularArray = (arr, int) => {
 
   while (i < arr.length * int) {
     const inx = i % arr.length
-    console.log(arr[inx])
+    // console.log(arr[inx])
     if (inx === arr.length - 1) {
-      console.log('==========')
+      // console.log('==========')
     }
     i++
   }
@@ -68,7 +68,7 @@ const output = circularArray(['one', 'two', 'three'], 3)
 // RECURSION - When you define something in terms of itself / A function that calls itself
 function basicRecursion(max, current) {
   if (current > max) return
-  console.log(current)
+  // console.log(current)
   basicRecursion(max, current + 1)
 }
 
@@ -92,3 +92,22 @@ function factorial(n) {
   if (n < 2) return 1
   return n * factorial(n - 1)
 }
+
+// Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string
+function countVowels(str) {
+  const strLower = str.toLowerCase()
+  const vowels = 'aeiou'
+  let count = 0
+
+  for (let i = 0; i < strLower.length; i++) {
+    if (vowels.indexOf(strLower[i]) !== -1) {
+      count += 1
+    }
+  }
+
+  console.log(count)
+  return count
+}
+
+const myStr = 'The quick brown fox'
+countVowels(myStr)
