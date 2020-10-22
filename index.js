@@ -111,3 +111,15 @@ function countVowels(str) {
 
 const myStr = 'The quick brown fox'
 countVowels(myStr)
+
+// Write a JavaScript function which accepts an argument and returns the type.
+
+function whatType(val) {
+  const result = typeof val
+  return result
+}
+
+whatType('hello')
+whatType(555)
+whatType([1, 2, 3])
+whatType({ a: 1, b: 2 })
