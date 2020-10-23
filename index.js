@@ -105,7 +105,7 @@ function countVowels(str) {
     }
   }
 
-  console.log(count)
+  // console.log(count)
   return count
 }
 
@@ -123,3 +123,20 @@ whatType('hello')
 whatType(555)
 whatType([1, 2, 3])
 whatType({ a: 1, b: 2 })
+
+// JavaScript function which returns the n rows by n columns identity matrix
+
+function identityMatrix(n) {
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      if (i === j) {
+        console.log('1')
+      } else {
+        console.log('0')
+      }
+    }
+    console.log('----------')
+  }
+}
+
+identityMatrix(4)
