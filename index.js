@@ -130,13 +130,21 @@ function identityMatrix(n) {
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
       if (i === j) {
-        console.log('1')
+        // console.log('1')
       } else {
-        console.log('0')
+        // console.log('0')
       }
     }
-    console.log('----------')
+    // console.log('----------')
   }
 }
 
 identityMatrix(4)
+
+//Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively.
+function second(arr) {
+  arr.sort((a, b) => a - b)
+  return `${arr[1]}, ${arr[arr.length - 2]}`
+}
+
+second([1, 2, 3, 4, 5])
