@@ -148,3 +148,18 @@ function second(arr) {
 }
 
 second([1, 2, 3, 4, 5])
+
+// Write a JavaScript function to compute the factors of a positive integer.
+
+function factors(n) {
+  const result = []
+  for (let i = 0; i <= n; i++) {
+    n % i === 0 ? result.push(i) : arr
+  }
+
+  return result
+}
+
+console.log(factors(15)) // [1,3,5,15]
+console.log(factors(16)) // [1,2,4,8,16]
+console.log(factors(17)) // [1,17]
