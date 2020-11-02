@@ -226,11 +226,14 @@ function same2(arr1, arr2) {
 // Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman
 function validAnagram(str1, str2) {
   if (str1.length !== str2.length) return false
-  const check = {}
+
+  let check = {}
+
   for (let i = 0; i < str1.length; i++) {
     const letter = str1[i]
     check[letter] ? (check[letter] += 1) : (check[letter] = 1)
   }
+
   for (let i = 0; i < str2.length; i++) {
     const letter = str2[i]
     if (!check[letter]) {
@@ -239,8 +242,44 @@ function validAnagram(str1, str2) {
       check[letter] -= 1
     }
   }
+
   return true
 }
 
-console.log(validAnagram('axx', 'xax'))
-console.log(validAnagram('car', 'rat'))
+// console.log(validAnagram('axx', 'xax'))
+// console.log(validAnagram('car', 'rat'))
+
+// POINTER PATTERN
+
+// Write a function called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that the sum to zero or undefined if a pair does not exist
+// O(n^2)
+function sumZero(arr) {
+  // do something
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === 0) {
+        return [arr[i], arr[j]]
+      }
+    }
+  }
+}
+
+// console.log(sumZero([-3, -2, -1, 0, 1, 2, 3]))
+
+// O(n)
+function sumZero2(arr) {
+  let left = 0
+  let right = arr.length - 1
+  while (left < right) {
+    let sum = arr[left] + arr[right]
+    if (sum === 0) {
+      return [arr[left], arr[right]]
+    } else if (sum > 0) {
+      right--
+    } else {
+      left++
+    }
+  }
+}
+
+console.log(sumZero2([-4, -3, -2, -1, 0, 1, 2, 3, 10]))
