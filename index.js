@@ -282,4 +282,72 @@ function sumZero2(arr) {
   }
 }
 
-console.log(sumZero2([-4, -3, -2, -1, 0, 1, 2, 3, 10]))
+// console.log(sumZero2([-4, -3, -2, -1, 0, 1, 2, 3, 10]))
+
+// ===========================================
+
+// Count Unique Values
+// Implement a function called countUniqueValues, which accepts a sorted array and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted
+
+function countUniqueValues(arr) {
+  if (arr.length === 0) return 0
+
+  let i = 0
+
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++
+      arr[i] = arr[j]
+    }
+  }
+  return i + 1
+}
+
+countUniqueValues([1, 1, 1, 1, 1, 2])
+
+// DIVIDE AND CONQUER
+
+// Given a sorted array of integers, write a function called search, that accepts the value and returns the index where the value passed to the functions is located. If the value is not found, return -1
+
+// Linear Search O(n)
+function search(arr, val) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === val) {
+      return i
+    }
+  }
+  return -1
+}
+
+search([1, 2, 3, 4, 5], 5)
+
+// SAME FREQUENCY
+
+// write a function called same frequency. Given two positive integers, find out if the two numbers have the same frequency of digits.
+
+function sameFreq(num1, num2) {
+  const strNum1 = num1.toString()
+  const strNum2 = num2.toString()
+  if (strNum1.length === 0 || strNum2.length === 0) return null
+  if (strNum1.length !== strNum2.length) return false
+
+  const countNum1 = {}
+  const countNum2 = {}
+
+  for (let i = 0; i < strNum1.length; i++) {
+    const num = strNum1[i]
+    countNum1[num] = (countNum1[num] || 0) + 1
+  }
+  for (let i = 0; i < strNum2.length; i++) {
+    const num = strNum2[i]
+    countNum2[num] = (countNum2[num] || 0) + 1
+  }
+
+  for (let key in countNum1) {
+    if (countNum1[key] !== countNum2[key]) return false
+  }
+
+  return true
+}
+
+sameFreq(112, 211)
