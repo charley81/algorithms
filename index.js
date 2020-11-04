@@ -426,10 +426,19 @@ function countDown(num) {
 
 // countDown(5)
 
-function countDown2(num) {
-  for (let i = num; i > 0; i--) {
-    console.log(i)
-  }
+function sumRange(num) {
+  if (num === 1) return 1
+  return num + sumRange(num - 1)
 }
 
-countDown2(5)
+// console.log(sumRange(3))
+
+// Write a factorial function using recursion
+function factorial(num) {
+  if (num <= 1) return 1
+
+  console.log(num)
+  return num * factorial(num - 1)
+}
+
+console.log(factorial(5))
