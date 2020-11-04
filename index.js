@@ -378,13 +378,13 @@ function checkDuplicates2(args) {
   return new Set(args).size !== args.length
 }
 
-console.log(checkDuplicates('abcd'))
-console.log(checkDuplicates('hola'))
-console.log(checkDuplicates('aacbd'))
-console.log(checkDuplicates('add'))
+// console.log(checkDuplicates('abcd'))
+// console.log(checkDuplicates('hola'))
+// console.log(checkDuplicates('aacbd'))
+// console.log(checkDuplicates('add'))
 
 // Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the average target.
-function averagePair(arr, avg) {
+function averagePair(arr, num) {
   let start = 0
   let end = arr.length - 1
   while (start < end) {
@@ -396,7 +396,7 @@ function averagePair(arr, avg) {
   return false
 }
 
-console.log(averagePair([1, 3, 5, 7, 9], 8))
+// console.log(averagePair([1, 3, 5, 7, 9], 8))
 
 // Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string from a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing
 function isSubsequence(str1, str2) {
@@ -411,4 +411,25 @@ function isSubsequence(str1, str2) {
   return false
 }
 
-console.log(isSubsequence('hello', 'worldhello'))
+// console.log(isSubsequence('hello', 'worldhello'))
+
+// RECURSION
+function countDown(num) {
+  if (num <= 0) {
+    console.log('all done')
+    return
+  }
+  console.log(num)
+  num--
+  countDown(num)
+}
+
+// countDown(5)
+
+function countDown2(num) {
+  for (let i = num; i > 0; i--) {
+    console.log(i)
+  }
+}
+
+countDown2(5)
