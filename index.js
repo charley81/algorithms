@@ -328,7 +328,6 @@ search([1, 2, 3, 4, 5], 5)
 function sameFreq(num1, num2) {
   const strNum1 = num1.toString()
   const strNum2 = num2.toString()
-  if (strNum1.length === 0 || strNum2.length === 0) return null
   if (strNum1.length !== strNum2.length) return false
 
   const countNum1 = {}
@@ -350,4 +349,36 @@ function sameFreq(num1, num2) {
   return true
 }
 
-sameFreq(112, 211)
+// console.log(sameFreq(112, 211))
+// console.log(sameFreq(313, 331))
+// console.log(sameFreq(112, 21))
+
+// Check if there are any duplicates
+function checkDuplicates(args) {
+  const check = {}
+
+  for (let val of args) {
+    check[val] = (check[val] || 0) + 1
+  }
+
+  for (let key in check) {
+    if (check[key] > 1) return true
+  }
+
+  return false
+}
+
+// console.log(checkDuplicates('abcd'))
+// console.log(checkDuplicates('hola'))
+// console.log(checkDuplicates('aacbd'))
+// console.log(checkDuplicates('add'))
+
+// check if there are duplicates using one line
+function checkDuplicates2(args) {
+  return new Set(args).size !== args.length
+}
+
+console.log(checkDuplicates('abcd'))
+console.log(checkDuplicates('hola'))
+console.log(checkDuplicates('aacbd'))
+console.log(checkDuplicates('add'))
