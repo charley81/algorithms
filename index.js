@@ -441,4 +441,35 @@ function factorial(num) {
   return num * factorial(num - 1)
 }
 
-console.log(factorial(5))
+// console.log(factorial(5))
+
+// ======== == HELPER METHOD RECURSION ==========
+function outer(input) {
+  const outerScopedVariable = []
+
+  function helper(helperInput) {
+    helper(helperInput--)
+  }
+
+  helper(input)
+
+  return outerScopedVariable
+}
+
+function collectOdds(nums) {
+  let result = []
+
+  function helper(helperInput) {
+    if (helperInput.length === 0) return
+
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0])
+    }
+
+    helper(helperInput.slice(1))
+  }
+
+  helper(nums)
+
+  return result
+}
